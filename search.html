@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모양으로 약 찾기</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/search.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./img/logo.svg" alt="약학정보원">
+          </a>
+        </div>
+        <ul class="nav">
+          <li><a href="#">의약품 검색</a></li>
+          <li><a href="#">의약품 정보</a></li>
+          <li><a href="#">의약품 안전정보</a></li>
+          <li><a href="#">전문정보</a></li>
+        </ul>
+        <div class="login">
+          <!-- 로그인: PC는 글자, 모바일은 아이콘 -->
+          <button type="button" class="login-btn" aria-label="로그인">
+            <span>로그인</span>
+            <img src="./img/m_myicon.svg" alt="">
+          </button>
+
+          <!-- 내 약 관리: 기존 그대로 -->
+          <div class="my">
+            <a href="./mypage.html" class="my-btn">
+              <span>내 약 관리</span>
+              <img src="./img/arrow-up-right.svg" alt="">
+            </a>
+          </div>
+
+          <!-- 모바일 메뉴 버튼 -->
+          <button type="button" class="menu-btn" aria-label="메뉴 열기">
+            <img src="./img/m_ham.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </header>
+      <main class="search-page">
+        <div class="search-bg" aria-hidden="true">
+          <img src="./img/search-bg1.svg" class="search-bg1" alt="">
+          <img src="./img/search-bg2.svg" class="search-bg2" alt="">
+        </div>
+        <div class="container">
+          <nav class="breadcrumb" aria-label="현재 위치">
+            <a href="./index.html">홈</a>
+            <span aria-hidden="true" class="bread-arrow">›</span>
+            <span>의약품 검색</span>
+            <span aria-hidden="true" class="bread-arrow">›</span>
+            <span aria-current="page" class="current-site">모양으로 약 찾기</span>
+          </nav>
+
+          <!-- 페이지 제목 -->
+          <div class="search-title">
+            <h2>모양으로 <span>약 찾기</span></h2>
+            <p>약에 적힌 문자나 기억나는 모양, 색상 등의 특징으로 의약품을 찾아보세요</p>
+          </div>
+          <div class="search-content-wrap">
+            <form class="search-filter">
+              <div class="shape1">
+                <div class="shape-text">
+                  <h4 class="shape-maintext">식별 문자</h4>
+                  <p class="shape-subtext">약의 앞·뒷면에 새겨진 문자나 숫자를 입력해주세요.</p>
+                </div>
+                <div class="mark-row">
+                  <input type="text" name="front-mark" placeholder="앞면 식별문자 (예: TYNL)" aria-label="앞면 식별문자">
+                  <label>
+                    <input type="checkbox" name="front-exact">정확히 일치
+                  </label>
+                </div>
+                <div class="mark-row">
+                  <input type="text" name="back-mark"
+                        placeholder="뒷면 식별문자"
+                        aria-label="뒷면 식별문자">
+                  <label>
+                    <input type="checkbox" name="back-exact">정확히 일치
+                  </label>
+                </div>
+                <p class="first-ex">정확히 일치'를 선택하면 입력한 문자와 동일한 의약품만 검색됩니다.</p>
+              </div>
+
+              <div class="shape2">
+                <div class="shape-text">
+                  <h4 class="shape-maintext">식별마크</h4>
+                  <p class="shape-subtext">문자 대신 로고나 그림이 새겨져 있다면 식별마크를 선택해주세요.</p>
+                </div>
+                <div class="mark-select">
+                  <button type="button" class="mark-select-btn">
+                    <img src="./img/plus.svg" alt="">
+                    <p>식별마크 선택</p>
+                  </button>
+
+                  <div class="selected-mark">
+                    <div class="mark">
+                      <img src="./img/mark.svg" alt="">
+                      <span>r0612</span>
+                    </div>
+                    <button type="button" aria-label="r0612 식별마크 삭제">
+                      <img src="./img/x.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shape3">
+                <div class="shape-text">
+                  <h4 class="shape-maintext">색상</h4>
+                  <p class="shape-subtext">기억나는 약의 색상을 선택해주세요.</p>
+                </div>
+                <div class="color-chip">
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="white">
+                    <span class="color-circle white"></span>
+                    <span>하양</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="yellow">
+                    <span class="color-circle yellow"></span>
+                    <span>노랑</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="orange">
+                    <span class="color-circle orange"></span>
+                    <span>주황</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="red">
+                    <span class="color-circle red"></span>
+                    <span>빨강</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="pink">
+                    <span class="color-circle pink"></span>
+                    <span>분홍</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="brown">
+                    <span class="color-circle brown"></span>
+                    <span>갈색</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="lime">
+                    <span class="color-circle lime"></span>
+                    <span>연두</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="green">
+                    <span class="color-circle green"></span>
+                    <span>초록</span>
+                  </label>
+                </div>
+                <div class="color-chip">
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="teal">
+                    <span class="color-circle teal"></span>
+                    <span>청록</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="blue">
+                    <span class="color-circle blue"></span>
+                    <span>파랑</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="navy">
+                    <span class="color-circle navy"></span>
+                    <span>남색</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="magenta">
+                    <span class="color-circle magenta"></span>
+                    <span>자주</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="purple">
+                    <span class="color-circle purple"></span>
+                    <span>보라</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="gray">
+                    <span class="color-circle gray"></span>
+                    <span>회색</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="black">
+                    <span class="color-circle black"></span>
+                    <span>검정</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="checkbox" name="color" value="transparent">
+                    <span class="color-circle color-transparent"></span>
+                    <span>투명</span>
+                  </label>
+                </div>
+              </div>
+              <div class="shape4">
+                <div class="shape-text">
+                  <h4 class="shape-maintext">모양</h4>
+                  <p class="shape-subtext">약의 전체적인 모양과 가장 비슷한 형태를 선택해주세요.</p>
+                </div>
+                <div class="shape-list">
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="round">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval1.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active1.svg" class="shape-active" alt="">
+                      </span>
+                      <span>원형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="oval">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval2.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active2.svg" class="shape-active" alt="">
+                      </span>
+                      <span>타원형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="oblong">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval3.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active3.svg" class="shape-active" alt="">
+                      </span>
+                      <span>장방형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="semicircle">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval4.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active4.svg" class="shape-active" alt="">
+                      </span>
+                      <span>반원형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="triangle">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval5.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active5.svg" class="shape-active" alt="">
+                      </span>
+                      <span>삼각형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="square">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval6.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active6.svg" class="shape-active" alt="">
+                      </span>
+                      <span>사각형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">  
+                    <input type="radio" name="shape" value="diamond">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval7.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active7.svg" class="shape-active" alt="">
+                      </span>
+                      <span>마름모형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="pentagon">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval8.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active8.svg" class="shape-active" alt="">
+                      </span>
+                      <span>오각형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="hexagon">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval9.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active9.svg" class="shape-active" alt="">
+                      </span>
+                      <span>육각형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="octagon">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval10.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active10.svg" class="shape-active" alt="">
+                      </span>
+                      <span>팔각형</span>
+                    </span>
+                  </label>
+                  <label class="shape-option">
+                    <input type="radio" name="shape" value="other">
+                    <span class="shape-box">
+                      <span class="shape-icon">
+                        <img src="./img/shape-oval11.svg"  class="shape-default" alt="">
+                        <img src="./img/shape-oval-active11.svg" class="shape-active" alt="">
+                      </span>
+                      <span>기타</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="shape5">
+                <div class="shape-text">
+                  <h4 class="shape-maintext">제형</h4>
+                  <p class="shape-subtext">약의 형태를 선택해주세요.</p>
+                </div>
+                <div class="form-list">
+                  <label class="form-option">
+                    <input type="radio" name="form" value="tablet">
+                    <span class="form-box">
+                      <span class="form-icon">
+                        <img src="./img/form-tablet.svg"  class="form-default" alt="">
+                        <img src="./img/form-tablet-active.svg" class="form-active" alt="">
+                      </span>
+                      <span>정제</span>
+                    </span>
+                  </label>
+                  <label class="form-option">
+                    <input type="radio" name="form" value="-hard-capsule">
+                    <span class="form-box">
+                      <span class="form-icon">
+                        <img src="./img/form-hard-capsule.svg"  class="form-default" alt="">
+                        <img src="./img/form-hard-capsule-active.svg" class="form-active" alt="">
+                      </span>
+                      <span>경질캡슐</span>
+                    </span>
+                  </label>
+                  <label class="form-option">
+                    <input type="radio" name="form" value="soft-capsule">
+                    <span class="form-box">
+                      <span class="form-icon">
+                        <img src="./img/form-soft-capsule.svg"  class="form-default" alt="">
+                        <img src="./img/form-soft-capsule-active.svg" class="form-active" alt="">
+                      </span>
+                      <span>연질캡슐</span>
+                    </span>
+                  </label>
+                  <label class="form-option">
+                    <input type="radio" name="form" value="other">
+                    <span class="form-box">
+                      <span class="form-icon">
+                        <img src="./img/shape-oval11.svg"  class="form-default" alt="">
+                        <img src="./img/shape-oval-active11.svg" class="form-active" alt="">
+                      </span>
+                      <span>기타</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="shape6">
+                <div class="shape-text">
+                  <h4 class="shape-maintext">분할선</h4>
+                  <p class="shape-subtext">약 표면에 새겨진 분할선의 형태를 선택해주세요.</p>
+                </div>
+                <div class="score-list">
+                  <label class="score-option">
+                    <input type="radio" name="score" value="none">
+                    <span class="score-box">
+                      <span class="score-icon">
+                        <img src="./img/score-none.svg"  class="score-default" alt="">
+                        <img src="./img/score-none-active.svg" class="score-active" alt="">
+                      </span>
+                      <span>없음</span>
+                    </span>
+                  </label>
+                  <label class="score-option">
+                    <input type="radio" name="score" value="-hard-capsule">
+                    <span class="score-box">
+                      <span class="score-icon">
+                        <img src="./img/score-cross.svg"  class="score-default" alt="">
+                        <img src="./img/score-cross-active.svg" class="score-active" alt="">
+                      </span>
+                      <span>(+)형</span>
+                    </span>
+                  </label>
+                  <label class="score-option">
+                    <input type="radio" name="score" value="soft-capsule">
+                    <span class="score-box">
+                      <span class="score-icon">
+                        <img src="./img/score-line.svg"  class="score-default" alt="">
+                        <img src="./img/score-line-active.svg" class="score-active" alt="">
+                      </span>
+                      <span>(-)형</span>
+                    </span>
+                  </label>
+                  <label class="score-option">
+                    <input type="radio" name="score" value="other">
+                    <span class="score-box">
+                      <span class="score-icon">
+                        <img src="./img/shape-oval11.svg"  class="score-default" alt="">
+                        <img src="./img/shape-oval-active11.svg" class="score-active" alt="">
+                      </span>
+                      <span>기타</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="add">
+                <div class="add-text">
+                  <h3>상세 조건 추가하기</h3>
+                  <p class="shape-subtext">더 정확한 검색이 필요한 경우 추가 정보를 입력해주세요.</p>
+                </div>
+                <img src="./img/chevron-down.svg" alt="">
+              </div>
+              <div class="search-actions">
+                <button type="reset" class="filter-reset">
+                  <img src="./img/reset.svg" alt="">
+                  <span>선택 초기화</span>
+                </button>
+
+                <button type="submit" class="filter-submit">
+                  <img src="./img/searchicon.svg" alt="">
+                  <span>검색하기</span>
+                </button>
+              </div>
+            </form>
+            <!-- 오른쪽 시작 -->
+            <aside class="search-selected">
+              <div class="shape-text">
+                <h4 class="selected-text">선택한 조건</h4>
+                <span class="selected-count">0</span>
+              </div>
+              <div class="pill-result">
+                <img src="./img/pill-result.svg" alt="">
+              </div>
+              <div class="ex-text">
+                <h4>이런 모양의 약을 찾고 있어요</h4>
+                <p>선택한 조건을 바탕으로 생성된 예시 이미지입니다.<br>실제 의약품의 모양 및 색상과 차이가 있을 수 있습니다.</p>
+              </div>
+              <ul class="selected-chips">
+                <!-- 선택한 조건 칩이 들어갈 자리 -->
+                <!-- <li class="selected-chip">
+                  <span class="selected-color blue"></span>
+                  <span>파랑</span>
+
+                  <button type="button" class="chip-remove" aria-label="파랑 조건 삭제">
+                    <img src="./img/x.svg" alt="">
+                  </button>
+                </li>
+
+                <li class="selected-chip">
+                  <img src="./img/shape-oval-active2.svg" class="selected-icon" alt="">
+                  <span>타원형</span>
+
+                  <button type="button" class="chip-remove" aria-label="타원형 조건 삭제">
+                    <img src="./img/x.svg" alt="">
+                  </button>
+                </li> -->
+              </ul>
+              <div class="tip">
+                <h4>검색 TIP</h4>
+                <ul class="tip-list">
+                  <li>색상은 여러 개 선택할 수 있으며,<br>정확한 색상이 기억나지 않는다면 비슷한 계열을 선택해보세요.</li>
+                  <li>식별문자는 한 개 이상만 입력해도 검색됩니다.</li>
+                  <li>더 정확한 검색을 원한다면 추가 조건을 사용해보세요.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+    </main>
+  </div>
+  <script src="./js/search.js"></script>
+</body>
+</html>

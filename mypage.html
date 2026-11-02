@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 약 관리</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/mypage.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./img/logo.svg" alt="약학정보원">
+          </a>
+        </div>
+
+        <ul class="nav">
+          <li class="nav-dropdown">
+            <button
+              type="button"
+              class="nav-trigger"
+              aria-expanded="false"
+              aria-controls="medicine-submenu"
+            >
+              의약품 검색
+            </button>
+
+            <ul
+              class="nav-submenu"
+              id="medicine-submenu"
+              hidden
+            >
+              <li>
+                <a href="./search.html">모양으로 약 찾기</a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#">의약품 정보</a></li>
+          <li><a href="#">의약품 안전정보</a></li>
+          <li><a href="#">전문정보</a></li>
+        </ul>
+
+        <div class="login">
+          <button
+            type="button"
+            class="login-btn"
+            aria-label="김리효님 계정"
+          >
+            <span>김리효님</span>
+            <img src="./img/m_myicon.svg" alt="">
+          </button>
+
+          <div class="my">
+            <a href="./mypage.html" class="my-btn" aria-current="page">
+              <span>내 약 관리</span>
+              <img src="./img/arrow-up-right.svg" alt="">
+            </a>
+          </div>
+
+          <button
+            type="button"
+            class="menu-btn"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <img src="./img/m_ham.svg" alt="">
+          </button>
+        </div>
+      </div>
+
+      <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="모바일 메뉴"
+        hidden
+      >
+        <div class="mobile-menu-inner">
+          <p class="mobile-menu-title">의약품 검색</p>
+          <a href="./search.html">모양으로 약 찾기</a>
+
+          <a
+            href="./mypage.html"
+            class="mobile-my-link"
+            aria-current="page"
+          >
+            내 약 관리
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+      <main class="mypage">
+        <!-- 파란 배경 + 인사말 -->
+        <section class="mypage-hero">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="현재 위치">
+              <a href="./index.html">홈</a>
+              <span aria-hidden="true" class="bread-arrow">›</span>
+              <span aria-current="page" class="current-site">내 약 관리</span>
+            </nav>
+            <div class="mypage-title">
+              <span class="mypage-label">내 약 관리</span>
+              <h1>안녕하세요, 리효님!</h1>
+              <p>복용중인 의약품과 저장한 약 정보를 한눈에 관리해보세요.</p>
+            </div>
+
+            <div class="medicine-search">
+              <form class="medicine-search-form">
+                <h2>복용 중인 의약품을 검색해보세요.</h2>
+                <p>의약품명을 입력하면 검색 결과를 확인할 수 있어요.</p>
+
+                <div class="medicine-search-row">
+                  <div class="medicine-search-input">
+                    <img src="./img/pill-icon.svg" alt="">
+
+                    <input
+                      type="search"
+                      name="medicine"
+                      placeholder="의약품 검색"
+                      aria-label="의약품명"
+                    >
+                  </div>
+
+                  <button type="submit" class="submit">
+                    <img src="./img/searchicon.svg" alt="">
+                    <span>검색하기</span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="my-current">
+          <div class="container">
+            <h1>나의 약 현황</h1>
+            <div class="current-list">
+              <a href="#">
+                <div class="current current-first">
+                  <h2>3</h2>
+                  <p>복용 중인 약</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="current">
+                  <h2>0</h2>
+                  <p>복용 종료한 약</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="current">
+                  <h2>3</h2>
+                  <p>저장한 약</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="current">
+                  <h2>4</h2>
+                  <p>알림 설정한 약</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="dose-section">
+          <div class="container">
+            <div class="dose-heading">
+              <h2>오늘의 복용 일정</h2>
+
+              <input
+                type="date"
+                class="dose-date"
+                value="2026-10-14"
+                aria-label="복용 일정 날짜 선택"
+              >
+            </div>
+
+            <div class="dose-layout">
+              <!-- 왼쪽: 날짜와 복용 일정 -->
+              <div class="dose-schedule">
+                <div class="dose-week">
+                  <button
+                    type="button"
+                    class="dose-week-prev"
+                    aria-label="이전 주"
+                  >‹</button>
+
+                  <!-- 자바스크립트로 날짜 7개 생성 -->
+                  <div class="dose-days"></div>
+
+                  <button
+                    type="button"
+                    class="dose-week-next"
+                    aria-label="다음 주"
+                  >›</button>
+                </div>
+
+                <ul class="dose-list">
+                  <li class="dose-item">
+                    <div class="dose-item-heading">
+                      <div>
+                        <h3>아침 약 <time>08:00</time></h3>
+                        <p>2종 · 총 2정</p>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="dose-complete is-complete"
+                        aria-pressed="true"
+                      >복용 완료</button>
+                    </div>
+
+                    <ul class="dose-medicines">
+                      <li>
+                        <span>노바스크정 5mg</span>
+                        <details class="dose-image">
+                          <summary>약 이미지 보기</summary>
+                          <img
+                            src="./img/nova.svg"
+                            alt="노바스크정 5mg 앞뒷면"
+                          >
+                        </details>
+                      </li>
+
+                      <li>
+                        <span>리피토정 10mg</span>
+                        <details class="dose-image">
+                          <summary>약 이미지 보기</summary>
+                          <img
+                            src="./img/lipi.svg"
+                            alt="리피토정 10mg 앞뒷면"
+                          >
+                        </details>
+                      </li>
+                    </ul>
+
+                  <li class="dose-item">
+                    <div class="dose-item-heading">
+                      <div>
+                        <h3>점심 약 <time>13:00</time></h3>
+                        <p>1종 · 총 1정</p>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="dose-complete"
+                        aria-pressed="false"
+                      >복용 완료하기</button>
+                    </div>
+
+                    <ul class="dose-medicines">
+                      <li>
+                        <span>유한메트포르민염산염정 500mg</span>
+                        <details class="dose-image">
+                          <summary>약 이미지 보기</summary>
+                          <img
+                            src="./img/youhan.svg"
+                            alt="유한메트포르민염산염정 500mg 앞뒷면"
+                          >
+                        </details>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="dose-item">
+                    <div class="dose-item-heading">
+                      <div>
+                        <h3>저녁 약 <time>19:00</time></h3>
+                        <p>2종 · 총 2정</p>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="dose-complete"
+                        aria-pressed="false"
+                      >복용 완료하기</button>
+                    </div>
+
+                    <ul class="dose-medicines">
+                      <li>
+                        <span>노바스크정 5mg</span>
+                        <details class="dose-image">
+                          <summary>약 이미지 보기</summary>
+                          <img
+                            src="./img/nova.svg"
+                            alt="노바스크정 5mg 앞뒷면"
+                          >
+                        </details>
+                      </li>
+
+                      <li>
+                        <span>유한메트포르민염산염정 500mg</span>
+                        <details class="dose-image">
+                          <summary>약 이미지 보기</summary>
+                          <img
+                            src="./img/youhan.svg"
+                            alt="유한메트포르민염산염정 500mg 앞뒷면"
+                          >
+                        </details>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- 오른쪽: 복용 현황 -->
+              <div class="dose-summary">
+                <h3 class="dose-summary-title">선택한 날의 복용 현황</h3>
+
+                <div class="dose-progress">
+                  <svg viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="dose-progress-track" cx="60" cy="60" r="52"/>
+                    <circle
+                      class="dose-progress-fill"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                      pathLength="100"
+                    />
+                  </svg>
+
+                  <div class="dose-progress-text" aria-live="polite">
+                    <strong class="dose-progress-count">1/3</strong>
+                    <span>복용 완료</span>
+                  </div>
+                </div>
+
+                <div class="dose-summary-message" aria-live="polite">
+                  <h4>오늘 <span class="dose-done-count">1</span>회 복용 완료했어요</h4>
+                  <p>남은 복용 일정 <span class="dose-left-count">2</span>회</p>
+                </div>
+
+                <div class="dose-app">
+                  <div class="app-text">
+                    <img src="./img/bell.svg" alt="">
+                    <p>
+                      복용 시간을 놓치지 않도록,<br>
+                      복용 앱에서 알림을 받아보세요.
+                    </p>
+                  </div>
+                  <!-- 실제 앱 다운로드 주소로 교체 -->
+                  <a href="#" class="dose-app-link">앱 다운로드</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="registered-section">
+          <div class="container">
+            <div class="registered-heading">
+              <h2>내가 등록한 약</h2>
+              <p>등록한 의약품의 복용 정보와 관리 상태를 확인해보세요.</p>
+            </div>
+
+            <div class="registered-toolbar">
+              <div class="registered-tabs" aria-label="등록한 약 분류">
+                <button
+                  type="button"
+                  class="registered-tab is-active"
+                  data-category="taking"
+                  aria-pressed="true"
+                >
+                  복용 중인 약
+                  <span>3</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="registered-tab"
+                  data-category="finished"
+                  aria-pressed="false"
+                >
+                  복용 종료한 약
+                  <span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="registered-tab"
+                  data-category="saved"
+                  aria-pressed="false"
+                >
+                  저장한 약
+                  <span>3</span>
+                </button>
+              </div>
+
+              <div class="registered-actions">
+                <div class="registered-search">
+                  <input
+                    type="search"
+                    placeholder="등록한 약 검색"
+                    aria-label="등록한 약 검색"
+                  >
+                </div>
+
+                <button type="button" class="registered-add">
+                  <span aria-hidden="true">＋</span>
+                  약 등록하기
+                </button>
+              </div>
+            </div>
+
+            <ul class="registered-list">
+              <!-- 노바스크 -->
+              <li class="registered-card">
+                <div class="registered-card-top">
+                  <div class="registered-card-image">
+                    <img
+                      src="./img/nova.svg"
+                      alt="노바스크정 5mg 앞뒷면"
+                    >
+                  </div>
+
+                  <h3>노바스크정 5mg</h3>
+                  <p>암로디핀베실산염</p>
+                </div>
+
+                <div class="registered-card-bottom">
+                  <ul class="registered-info">
+                    <li>
+                      <img src="./img/pill-icon.svg" alt="">
+                      <span>1회 1정</span>
+                    </li>
+                    <li>
+                      <img src="./img/clock.svg" alt="">
+                      <span>아침 08:00&nbsp; 저녁 19:00</span>
+                    </li>
+                    <li>
+                      <img src="./img/calendar.svg" alt="">
+                      <span>2026.09.01 - 2026.12.31</span>
+                    </li>
+                  </ul>
+
+                  <button type="button" class="registered-detail">
+                    상세정보 보기
+                  </button>
+                </div>
+              </li>
+
+              <!-- 리피토 -->
+              <li class="registered-card">
+                <div class="registered-card-top">
+                  <div class="registered-card-image">
+                    <img
+                      src="./img/lipi.svg"
+                      alt="리피토정 10mg 앞뒷면"
+                    >
+                  </div>
+
+                  <h3>리피토정 10mg</h3>
+                  <p>아토르바스타틴칼슘삼수화물</p>
+                </div>
+
+                <div class="registered-card-bottom">
+                  <ul class="registered-info">
+                    <li>
+                      <img src="./img/pill-icon.svg" alt="">
+                      <span>1회 1정</span>
+                    </li>
+                    <li>
+                      <img src="./img/clock.svg" alt="">
+                      <span>아침 08:00</span>
+                    </li>
+                    <li>
+                      <img src="./img/calendar.svg" alt="">
+                      <span>2026.09.01 - 2026.11.21</span>
+                    </li>
+                  </ul>
+
+                  <button type="button" class="registered-detail">
+                    상세정보 보기
+                  </button>
+                </div>
+              </li>
+
+              <!-- 메트포르민 -->
+              <li class="registered-card">
+                <div class="registered-card-top">
+                  <div class="registered-card-image">
+                    <img
+                      src="./img/youhan.svg"
+                      alt="유한메트포르민염산염정 500mg 앞뒷면"
+                    >
+                  </div>
+
+                  <h3>유한메트포르민염산염정 500mg</h3>
+                  <p>메트포르민염산염</p>
+                </div>
+
+                <div class="registered-card-bottom">
+                  <ul class="registered-info">
+                    <li>
+                      <img src="./img/pill-icon.svg" alt="">
+                      <span>1회 1정</span>
+                    </li>
+                    <li>
+                      <img src="./img/clock.svg" alt="">
+                      <span>점심 13:00&nbsp; 저녁 19:00</span>
+                    </li>
+                    <li>
+                      <img src="./img/calendar.svg" alt="">
+                      <span>2026.09.01 - 2026.12.31</span>
+                    </li>
+                  </ul>
+
+                  <button type="button" class="registered-detail">
+                    상세정보 보기
+                  </button>
+                </div>
+              </li>
+            </ul>
+
+            <!-- 추후 탭 전환·검색 시 표시 -->
+            <p class="registered-empty" hidden>
+              복용을 종료한 약이 없어요.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+    (() => {
+      const section = document.querySelector(".dose-section");
+      if (!section) return;
+
+      const dateInput = section.querySelector(".dose-date");
+      const daysBox = section.querySelector(".dose-days");
+      const completeButtons = [...section.querySelectorAll(".dose-complete")];
+
+      const records = new Map([
+        ["2026-10-14", [true, false, false]]
+      ]);
+
+      let selectedDate = dateInput.value;
+      let weekStart = getWeekStart(parseDate(selectedDate));
+
+      function parseDate(value) {
+        const [year, month, day] = value.split("-").map(Number);
+        return new Date(year, month - 1, day);
+      }
+
+      function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      }
+
+      function getWeekStart(date) {
+        const start = new Date(date);
+        start.setDate(start.getDate() - start.getDay());
+        return start;
+      }
+
+      function getRecord() {
+        if (!records.has(selectedDate)) {
+          records.set(selectedDate, [false, false, false]);
+        }
+        return records.get(selectedDate);
+      }
+
+      function renderWeek() {
+        daysBox.replaceChildren();
+        const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
+
+        for (let index = 0; index < 7; index++) {
+          const date = new Date(weekStart);
+          date.setDate(date.getDate() + index);
+
+          const value = formatDate(date);
+          const button = document.createElement("button");
+
+          button.type = "button";
+          button.className = "dose-day";
+          button.classList.toggle("is-selected", value === selectedDate);
+          button.setAttribute("aria-pressed", String(value === selectedDate));
+          button.setAttribute("aria-label", `${value} ${weekdays[index]}요일`);
+
+          button.innerHTML = `
+            <span>${weekdays[index]}</span>
+            <strong>${date.getDate()}</strong>
+          `;
+
+          button.addEventListener("click", () => {
+            selectedDate = value;
+            dateInput.value = value;
+            renderWeek();
+            renderProgress();
+          });
+
+          daysBox.append(button);
+        }
+      }
+
+      function renderProgress() {
+        const record = getRecord();
+        const done = record.filter(Boolean).length;
+        const total = record.length;
+
+        completeButtons.forEach((button, index) => {
+          button.classList.toggle("is-complete", record[index]);
+          button.setAttribute("aria-pressed", String(record[index]));
+          button.textContent = record[index] ? "복용 완료" : "복용 완료하기";
+        });
+
+        section.querySelector(".dose-progress-count").textContent =
+          `${done}/${total}`;
+
+        section.querySelector(".dose-done-count").textContent = done;
+        section.querySelector(".dose-left-count").textContent = total - done;
+
+        section.querySelector(".dose-progress-fill")
+          .style.strokeDasharray = `${done / total * 100} 100`;
+      }
+
+      dateInput.addEventListener("change", () => {
+        if (!dateInput.value) return;
+        selectedDate = dateInput.value;
+        weekStart = getWeekStart(parseDate(selectedDate));
+        renderWeek();
+        renderProgress();
+      });
+
+      function moveWeek(amount) {
+        const date = parseDate(selectedDate);
+        date.setDate(date.getDate() + amount * 7);
+
+        selectedDate = formatDate(date);
+        dateInput.value = selectedDate;
+        weekStart = getWeekStart(date);
+
+        renderWeek();
+        renderProgress();
+      }
+
+      section.querySelector(".dose-week-prev")
+        .addEventListener("click", () => moveWeek(-1));
+
+      section.querySelector(".dose-week-next")
+        .addEventListener("click", () => moveWeek(1));
+
+      completeButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          const record = getRecord();
+          record[index] = !record[index];
+          renderProgress();
+        });
+      });
+
+      renderWeek();
+      renderProgress();
+    })();
+    </script>
+    <script>
+    (() => {
+      const section = document.querySelector(".registered-section");
+      if (!section) return;
+
+      const tabs = section.querySelectorAll(".registered-tab");
+      const list = section.querySelector(".registered-list");
+      const empty = section.querySelector(".registered-empty");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((item) => {
+            const active = item === tab;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-pressed", String(active));
+          });
+
+          const finished = tab.dataset.category === "finished";
+
+          list.hidden = finished;
+          empty.hidden = !finished;
+        });
+      });
+    })();
+    </script>
+    <script src="./js/header.js"></script>
+  </body>
+</html>

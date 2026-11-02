@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>약학정보원</title>
+  
+  <script src="./js/main.js" defer=""></script>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./img/logo.svg" alt="약학정보원">
+          </a>
+        </div>
+        <ul class="nav">
+  <li class="nav-dropdown">
+    <button
+      type="button"
+      class="nav-trigger"
+      aria-expanded="false"
+      aria-controls="medicine-submenu"
+    >
+      의약품 검색
+    </button>
+
+    <ul class="nav-submenu" id="medicine-submenu" hidden>
+      <li>
+        <a href="./search.html">모양으로 약 찾기</a>
+      </li>
+    </ul>
+  </li>
+
+  <li><a href="#">의약품 정보</a></li>
+  <li><a href="#">의약품 안전정보</a></li>
+  <li><a href="#">전문정보</a></li>
+</ul>
+        <div class="login">
+          <!-- 로그인: PC는 글자, 모바일은 아이콘 -->
+          <button type="button" class="login-btn" aria-label="로그인">
+            <span>로그인</span>
+            <img src="./img/m_myicon.svg" alt="">
+          </button>
+
+          <!-- 내 약 관리: 기존 그대로 -->
+          <div class="my">
+            <a href="./mypage.html" class="my-btn">
+              <span>내 약 관리</span>
+              <img src="./img/arrow-up-right.svg" alt="">
+            </a>
+          </div>
+
+          <!-- 모바일 메뉴 버튼 -->
+          <button
+            type="button"
+            class="menu-btn"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <img src="./img/m_ham.svg" alt="">
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="모바일 메뉴" hidden>
+    <div class="mobile-menu-inner">
+      <p class="mobile-menu-title">의약품 검색</p>
+      <a href="./search.html">모양으로 약 찾기</a>
+
+      <a href="./mypage.html" class="mobile-my-link">
+        내 약 관리
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <!-- 왼쪽-->
+          <div class="hero-content">
+            <div class="hero-text">
+              <p class="text1">대한민국 의약품 정보의 표준</p>
+              <h1>의약품 정보를<br>
+                <span>쉽고 정확하게</span> 찾아보세요
+              </h1>
+              <p class="text2">국민의 건강한 삶을 위한,<br>신뢰할 수 있는 의약품 정보, 약학정보원이 함께합니다</p>
+            </div>
+            <form class="search-content" role="search">
+              <input type="search" name="keyword" placeholder="제품명 또는 성분명을 입력하세요" aria-label="제품명 또는 성분명">
+              <button type="submit" class="search-box" aria-label="검색">
+                <img src="./img/searchicon.svg" alt="">
+              </button>
+            </form>
+            <ul class="ex">
+              <li>#타이레놀</li>
+              <li>#고혈압</li>
+              <li>#아세트아미노펜</li>
+              <li>#항생제</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 오른쪽 -->
+        <div class="hero-image">
+          <img src="./img/hero-pill.svg" alt="">
+        </div>
+      </section>
+
+      <section class="quick-service">
+        <div class="container">
+          <div class="quick-column">
+            <div class="quick-title">
+              <h2>빠른 정보 찾기</h2>
+              <p class="section-sub">자주 이용하는 의약품 서비스를 한눈에 보세요</p>
+            </div>
+            <a href="./search.html" class="quick-card shape-card">
+              <span class="quick-arrow">
+                <img src="./img/arrow-up-right.svg" alt="">
+              </span>
+              <img src="./img/quick1icon.svg" class="quick-icon icon-shape" alt="">
+              <div class="quick-text">
+                <h3 class="first-card">모양으로 약 찾기</h3>
+                <p class="sub">약의 모양, 색상, 크기 등<br>기억나는 특징을 선택해<br>의약품을 간편하게 찾아보세요</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="quick-column">
+            <a href="#" class="quick-card">
+              <span class="quick-arrow">
+                <img src="./img/arrow-up-right.svg" alt="">
+              </span>
+              <img src="./img/quick2icon.svg" class="quick-icon icon-detail" alt="">
+              <div class="quick-text">
+                <h3>의약품 상세검색</h3>
+                 <p class="quick-desc-pc">
+                  제품명, 성분명 등<br>다양한 상세 조건을 입력해<br>원하는 의약품 정보를 찾아보세요
+                </p>
+                 <p class="quick-desc-mobile">
+                  다양한 조건으로<br>
+                  의약품을 검색해보세요
+                </p>
+              </div>
+            </a>
+
+            <a href="#" class="quick-card">
+              <span class="quick-arrow">
+                <img src="./img/arrow-up-right.svg" alt="">
+              </span>
+              <img src="./img/quick3icon.svg" class="quick-icon icon-info" alt="">
+              <div class="quick-text">
+                <h3>복약정보</h3>
+                <p class="quick-desc-pc">의약품의 올바른 복용방법과<br>복용 시 주의해야 할 사항을<br>한눈에 확인해보세요</p>
+                <p class="quick-desc-mobile">
+                  올바른 복용법과<br>
+                  주의사항을 확인하세요
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="quick-column">
+            <a href="#" class="quick-card">
+              <span class="quick-arrow">
+                <img src="./img/arrow-up-right.svg" alt="">
+              </span>
+              <img src="./img/quick4icon.svg" class="quick-icon icon-conver" alt="">
+              <div class="quick-text">
+                <h3>상호작용</h3>
+                <p class="quick-desc-pc">함께 복용하는 의약품 간<br>주의가 필요한 상호작용 정보를<br>미리 확인해보세요</p>
+                <p class="quick-desc-mobile">
+                  함께 복용하는 약의<br>
+                  상호작용을 확인하세요
+                </p>
+              </div>
+            </a>
+
+            <a href="#" class="quick-card">
+              <span class="quick-arrow">
+                <img src="./img/arrow-up-right.svg" alt="">
+              </span>
+              <img src="./img/quick5icon.svg" class="quick-icon icon-info2" alt="">
+              <div class="quick-text">
+                <h3>부작용 정보</h3>
+                <p  class="quick-desc-pc">의약품 사용 중 발생할 수 있는<br>주요 부작용과 관련 정보를<br>확인해보세요</p>
+                <p class="quick-desc-mobile">
+                  의약품의 주요<br>
+                  부작용을 확인하세요
+                </p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+        <img src="./img/quick6icon.svg" class="pill1" alt="">
+        <img src="./img/quick7icon.svg" class="pill2" alt="">
+        <img src="./img/quick8icon.svg" class="pill3" alt="">
+      </section>
+      <section class="safe">
+        <div class="container">
+          <div class="safe-title">
+            <h2>주요 의약품 안전 정보</h2>
+              <p class="section-sub">국민의 안전한 의약품 사용을 위해 안정성 서한<br class="mobile-br">정보를 신속하게 제공합니다</p>
+          </div>
+          <div class="safe-compo">
+            <div class="safety-image">
+              <img src="./img/safe.svg" alt="약국에서 의약품을 확인하는 모습">
+
+              <a href="#" class="safety-btn">
+                <span class="safe-text">안전성 서한 바로가기</span>
+                <img src="./img/arrow-up-right.svg" class="safe-arrow" alt="">
+              </a>
+            </div>
+            <ul class="safety-list">
+              <li>
+                <a href="#" class="safety-item featured">
+                  <span class="safety-title">
+                    미래바이오제약(주)에 대한 잠정 출하 중지 또는 회수·폐기 등 명령하고, 속보 배포
+                  </span>
+
+                  <span class="safety-arrow arrow-featured">
+                    <img src="./img/arrow-up-right.svg" alt="">
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="safety-item">
+                  <span class="safety-title">
+                    한국오노약품공업주식회사 "옵디보주" 자진회수
+                  </span>
+
+                  <time datetime="2026-02-06">2026-02-06</time>
+
+                  <span class="safety-arrow">
+                    <img src="./img/arrow-down-right.svg" alt="">
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="safety-item">
+                  <span class="safety-title">
+                    '설글리코타이드'제제 대체 의약품 사용 권고
+                  </span>
+
+                  <time datetime="2026-02-05">2026-02-05</time>
+
+                  <span class="safety-arrow">
+                    <img src="./img/arrow-down-right.svg" alt="">
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="safety-item">
+                  <span class="safety-title">
+                    한국화이자제약(주) "프리베나20프리필드시린지" 잠정 판매사용중지 조치
+                  </span>
+
+                  <time datetime="2025-06-24">2025-06-24</time>
+
+                  <span class="safety-arrow">
+                    <img src="./img/arrow-down-right.svg" alt="">
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="medical-info">
+        <div class="container">
+          <div class="medical-top">
+            <div class="medical-title">
+              <h2>전문 의학정보</h2>
+                <p class="section-sub">신뢰할 수 있는 의학정보를 제공합니다</p>
+            </div>
+            <a href="#" class="medical-btn">
+              <span class="safe-text">더 보기</span>
+              <img src="./img/arrow-up-right.svg" class="safe-arrow" alt="">
+            </a>
+          </div>
+          <div class="medical-bottom">
+            <div class="medical-row medical-first">
+              <img src="./img/medicalicon1.svg" class="medi1" alt="">
+              <div class="medical-text text-first">
+                <h3 class="medical-card">성분정보</h3>
+                <p class="medical-sub">의약품 성분별 효능과 특성을<br>상세하게 확인해보세요</p>
+              </div>
+            </div>
+            <div class="medical-row">
+              <img src="./img/medicalicon2.svg" class="medi2" alt="">
+              <div class="medical-text">
+                <h3 class="medical-card">약물백과</h3>
+                <p class="medical-sub">질환별 약물 정보와 올바른 사용법을<br>한눈에 확인해보세요</p>
+              </div>
+            </div>
+            <div class="medical-row">
+              <img src="./img/medicalicon3.svg" class="medi3" alt="">
+              <div class="medical-text">
+                <h3 class="medical-card">팜리뷰</h3>
+                <p class="medical-sub">의약품과 약물치료에 대한<br>전문가 리뷰를 확인해보세요</p>
+              </div>
+            </div>
+            <div class="medical-row">
+              <img src="./img/medicalicon4.svg" class="medi4" alt="">
+              <div class="medical-text">
+                <h3 class="medical-card">의약품 식별표시</h3>
+                <p class="medical-sub">의약품에 표시된 문자와 기호 등<br>식별 정보를 확인해보세요</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="medical-bg">
+          <img src="./img/medical_bgicon1.svg" class="medical-bg1" alt="">
+          <img src="./img/medical_bgicon2.svg" class="medical-bg2" alt="">
+        </div>
+      </section>
+      <section class="new">
+        <div class="container">
+          <div class="new-title">
+            <h2>새로운 소식</h2>
+              <p class="section-sub">약학정보원의 주요 소식을 확인해 보세요</p>
+          </div>
+          <div class="new-compo">
+            <div class="new-left">
+              <ul class="new-list">
+                <li>공지사항</li>
+                <li>보도자료</li>
+                <li>입찰공고</li>
+                <li>채용공고</li>
+              </ul>
+              <ul class="safety-list">
+                  <li>
+                    <a href="#" class="safety-item featured">
+                      <span class="safety-title">
+                        [입찰공고] 약국 처방 빅데이터 가명·익명처리 컨설팅 및 적정성 평가 용역
+                      </span>
+
+                      <span class="safety-arrow arrow-featured">
+                        <img src="./img/arrow-up-right.svg" alt="">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="safety-item">
+                      <span class="safety-title">
+                        [입찰 재공고] 대한약사회 사이버연수원 재구축 용역
+                      </span>
+
+                      <time datetime="2023-03-06">2023-03-06</time>
+
+                      <span class="safety-arrow">
+                        <img src="./img/arrow-down-right.svg" alt="">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="safety-item">
+                      <span class="safety-title">
+                        [입찰공고] 대한약사회 사이버연수원 재구축 용역
+                      </span>
+                      <time datetime="2023-02-20">2023-02-20</time>
+
+                      <span class="safety-arrow">
+                        <img src="./img/arrow-down-right.svg" alt="">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="safety-item">
+                      <span class="safety-title">
+                        인공지능 개발을 위한 알약 이미지 데이터
+                      </span>
+                      <time datetime="2023-02-02">2023-02-02</time>
+                      <span class="safety-arrow">
+                        <img src="./img/arrow-down-right.svg" alt="">
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="news-banner">
+                <picture>
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="./img/app_banner_mo.svg"
+                  >
+
+                  <img
+                    src="./img/app_banner.svg"
+                    alt="KPIC 의약품검색 앱 안내"
+                  >
+                </picture>
+                <a href="#" class="app-download">앱 다운로드</a>
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="banner">
+        <div class="container">
+          <div class="book-banner">
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="./img/guide_banner_mo.svg"
+              >
+              <img
+                src="./img/guide_banner_pc.svg"
+                alt="2026년도 3개정판 출간, 맞춤 OTC 선택가이드"
+              >
+            </picture>
+            <a href="#" class="book-btn">
+              <span>자세히 보기</span>
+              <img src="./img/arrow-up-right.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="partners">
+        <div class="container">
+
+          <!-- 슬라이드 조작 버튼 -->
+          <div class="partners-controls">
+            <button type="button" class="partners-prev" aria-label="이전 로고">
+              <img src="./img/arrow-left.svg" alt="">
+            </button>
+
+            <button type="button" class="partners-next" aria-label="다음 로고">
+              <img src="./img/arrow-right.svg" alt="">
+            </button>
+
+            <button type="button" class="partners-pause" aria-label="자동 재생 일시정지">
+              <img src="./img/pause.svg" alt="">
+            </button>
+          </div>
+
+          <!-- 기관 로고 목록 -->
+          <div class="partners-window">
+            <ul class="partners-list">
+              <li><a href="#"><img src="./img/organization1.svg" alt="질병관리청"></a></li>
+              <li><a href="#"><img src="./img/organization2.svg" alt="식품의약품안전처 의약품통합정보시스템"></a></li>
+              <li><a href="#"><img src="./img/organization3.svg" alt="보건복지부"></a></li>
+              <li><a href="#"><img src="./img/organization4.svg" alt="건강보험심사평가원"></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <!-- 왼쪽: 로고와 기관 정보 -->
+        <div class="footer-left">
+          <img src="./img/logo.svg" alt="약학정보원">
+
+          <div class="footer-info">
+            <p>서울특별시 서초구 효령로 194 대한약사회관 B1 (재)약학정보원</p>
+            <p><strong>대표자</strong> 권영희</p>
+            <p><strong>사업자번호</strong> 214-82-06424</p>
+            <p><strong>고객지원</strong> 1670-5877</p>
+            <p><strong>TEL</strong> 02-3471-7575</p>
+            <p><strong>FAX</strong> 02-3472-9114</p>
+          </div>
+
+          <p class="copyright">©Copyright All Rights Reserved @ Korea Pharmaceutical Information Center Since 2000</p>
+        </div>
+
+        <!-- 오른쪽: 푸터 메뉴 -->
+        <nav class="footer-right" aria-label="푸터 메뉴">
+          <div class="footer-menu menu1">
+            <h3>
+              <button type="button" class="footer-toggle" aria-expanded="false">
+                기관정보
+              </button>
+            </h3>
+            <ul>
+              <li><a href="#">약학정보원 소개</a></li>
+              <li><a href="#">인재채용</a></li>
+              <li><a href="#">찾아오시는 길</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-menu menu2">
+            <h3>
+              <button type="button" class="footer-toggle" aria-expanded="false">
+                이용안내
+              </button>
+            </h3>
+            <ul>
+              <li><a href="#">서비스 이용약관</a></li>
+              <li><a href="#">개인정보 처리방침</a></li>
+              <li><a href="#">이메일주소 무단 수집거부</a></li>
+              <li><a href="#">법적 책임의 한계</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-menu menu3">
+            <h3>
+              <button type="button" class="footer-toggle" aria-expanded="false">
+                문의·업무지원
+              </button>
+            </h3>
+            <ul>
+              <li><a href="#">이메일 문의</a></li>
+              <li><a href="#">광고·제휴 문의</a></li>
+              <li><a href="#">포장이미지 등록</a></li>
+              <li><a href="#">의약품 식별표시</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script>
+(() => {
+  const partners = document.querySelector(".partners");
+  if (!partners) return;
+
+  const list = partners.querySelector(".partners-list");
+  const prev = partners.querySelector(".partners-prev");
+  const next = partners.querySelector(".partners-next");
+  const pause = partners.querySelector(".partners-pause");
+
+  let moving = false;
+  let playing = true;
+  let timer;
+
+  const pauseMarkup = pause.innerHTML;
+
+  async function move(direction) {
+    if (moving || list.children.length < 2) return;
+    moving = true;
+
+    const first = list.firstElementChild;
+    const gap = parseFloat(getComputedStyle(list).gap) || 0;
+    const distance = first.getBoundingClientRect().width + gap;
+
+    // 이전: 마지막 로고를 맨 앞으로 이동
+    if (direction === -1) {
+      list.prepend(list.lastElementChild);
+    }
+
+    const animation = list.animate(
+      direction === 1
+        ? [
+            { transform: "translateX(0)" },
+            { transform: `translateX(-${distance}px)` }
+          ]
+        : [
+            { transform: `translateX(-${distance}px)` },
+            { transform: "translateX(0)" }
+          ],
+      {
+        duration: 400,
+        easing: "ease-in-out",
+        fill: "forwards"
+      }
+    );
+
+    await animation.finished;
+
+    // 다음: 첫 번째 로고를 맨 뒤로 이동
+    if (direction === 1) {
+      list.append(list.firstElementChild);
+    }
+
+    animation.cancel();
+    moving = false;
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+
+    if (playing) {
+      timer = setInterval(() => move(1), 3000);
+    }
+  }
+
+  prev.addEventListener("click", () => {
+    move(-1);
+    startAuto();
+  });
+
+  next.addEventListener("click", () => {
+    move(1);
+    startAuto();
+  });
+
+  pause.addEventListener("click", () => {
+    playing = !playing;
+
+    if (playing) {
+      pause.innerHTML = pauseMarkup;
+      pause.setAttribute("aria-label", "자동 재생 일시정지");
+    } else {
+      pause.textContent = "▶";
+      pause.setAttribute("aria-label", "자동 재생 시작");
+    }
+
+    startAuto();
+  });
+
+  // 로고 위에 마우스를 올리거나 키보드로 접근하면 잠시 정지
+  partners.addEventListener("mouseenter", () => clearInterval(timer));
+  partners.addEventListener("mouseleave", () => {
+    if (!partners.contains(document.activeElement)) startAuto();
+  });
+
+  partners.addEventListener("focusin", () => clearInterval(timer));
+  partners.addEventListener("focusout", () => {
+    requestAnimationFrame(() => {
+      if (
+        !partners.contains(document.activeElement) &&
+        !partners.matches(":hover")
+      ) {
+        startAuto();
+      }
+    });
+  });
+
+  startAuto();
+})();
+</script>
+<script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
+
+<script>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const lenis = new Lenis({
+      autoRaf: true,
+      smoothWheel: true,
+      lerp: 0.1
+    });
+  }
+</script>
+<script src="./js/header.js"></script>
+</body>
+</html>

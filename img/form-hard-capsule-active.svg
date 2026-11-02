@@ -1,0 +1,15 @@
+<svg width="44" height="20" viewBox="0 0 44 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M9.63236 0.553307L33.5186 0.515372C38.5619 0.507363 42.6567 4.58921 42.6647 9.63243C42.6727 14.6757 38.5909 18.7705 33.5476 18.7785L9.66136 18.8164C4.61814 18.8244 0.523305 14.7426 0.515296 9.69937C0.507286 4.65615 4.58913 0.561316 9.63236 0.553307Z" fill="#1E71FF" stroke="#1E71FF"/>
+<use xlink:href="#stroke0_440_21" fill="url(#paint0_linear_440_21)"/>
+<mask id="stroke1_440_21" fill="white">
+<use xlink:href="#stroke0_440_21"/>
+</mask>
+<path d="M21.605 19.2974L33.6977 19.2782C38.9344 19.2699 43.1729 15.0179 43.1646 9.78117L43.1642 9.48207C43.1558 4.2453 38.9039 0.00679817 33.6671 0.0151144L21.5744 0.0343181L21.605 19.2974Z" stroke-width="2" stroke="#1E71FF" mask="url(#stroke1_440_21)"/>
+<defs>
+<linearGradient id="paint0_linear_440_21" x1="35.6773" y1="13.1931" x2="26.5234" y2="-15.9904" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E2EDFE"/>
+<stop offset="1" stop-color="#1E71FF"/>
+</linearGradient>
+<path id="stroke0_440_21" d="M43.1646 9.78117C43.1729 15.0179 38.9344 19.2699 33.6977 19.2782L21.605 19.2974L21.5744 0.0343181L33.6671 0.0151144C38.9039 0.00679817 43.1558 4.2453 43.1642 9.48207L43.1646 9.78117Z"/>
+</defs>
+</svg>
